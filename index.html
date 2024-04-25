@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="popupContainer" class="popup-container">
+        
+        <div class="popup">
+            <h2 id="winOrLose"></h2>
+            <p>Your stats:</p>
+            <div class="info" id="statInfo">
+                <label id="popupScore">Score: <span id="popupScoreValue"></span></label><br>
+                <label id="popupTimer">Time: <span id="popupTimerValue"></span></label><br>
+                <label id="#"><span id="#"></span></label>
+            </div>
+            <button id="playButton">Play Again</button>
+            <button id="closeButton">Close</button>
+        </div>
+    </div>
+
+    <div class="container-wrapper">
+        
+        <div class="info">
+            <label id="score">Score: <span id="currentScore">0</span></label>
+            <label id="timer">Time: <span id="timeElapsed">0s</span></label>
+            
+            
+            <label id="#"><span id="#"></span></label>
+            <label id="#"><span id="#"></span></label>
+        </div>
+        
+        <div class="container"></div>
+    </div>
+    
+    <script src="lib/jqueryfull.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
