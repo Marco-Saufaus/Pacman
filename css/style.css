@@ -14,7 +14,7 @@ body {
     margin-bottom: 10%;
 }
 
-#score {
+#score, #moves {
     margin-right: 31px;
 }
 

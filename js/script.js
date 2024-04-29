@@ -164,6 +164,7 @@ $(document).ready(function() {
         $("#winOrLose").text("You lose!")
         $("#popupContainer").show();
         $("#popupScoreValue").text(score);
+        $("#popupNumberMoves").text(numberTurns);
         $("#popupTimerValue").text(elapsedTime + "s");
         gameState = false;
     };
@@ -188,6 +189,8 @@ $(document).ready(function() {
         if (newId % 28 !== 0) { // Check collision with map border
             if (newMapCoordinate !== 1) { // Check collision with walls
                 if ([5, 6, 7, 8].includes(newMapCoordinate)) { // Check collision with Ghosts
+                    numberTurns += 1;
+                    $("#numberMoves").text(numberTurns);
                     gameOver();
                 } else {
                     
@@ -222,6 +225,7 @@ $(document).ready(function() {
                     }
 
                     numberTurns += 1;
+                    $("#numberMoves").text(numberTurns);
 
                     checkForCoin();
 
@@ -581,7 +585,6 @@ $(document).ready(function() {
                         possibleDirections.push("down");
                     }
                     let chosenDirection = possibleDirections[Math.floor(Math.random() * possibleDirections.length)];
-                    let newPosition;
                     switch (chosenDirection) {
                         case "left":
                             if (map[y][x - 1] === 4) {
@@ -644,8 +647,7 @@ $(document).ready(function() {
     function updateScore(x) {
         score += x;
         if (!(score === 304)) {
-            $("#currentScore").text(score);
-            
+            $("#currentScore").text(score);            
         } else {
             $("#currentScore").text(score);
             endTimer();
@@ -653,6 +655,7 @@ $(document).ready(function() {
             $("#winOrLose").text("You win!")
             $("#popupContainer").show();
             $("#popupScoreValue").text(score);
+            $("#popupNumberMoves").text(numberTurns);
             $("#popupTimerValue").text(elapsedTime + "s");
             gameState = false;
         }
@@ -713,6 +716,7 @@ $(document).ready(function() {
     
         // Clear displayed game statistics
         $("#currentScore").text("0");
+        $("#numberMoves").text("0")
 
         // Update player position
         currentPosition = startingPosition;
